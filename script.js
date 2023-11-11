@@ -5,7 +5,7 @@ const button = document.createElement('button');
 const section = document.createElement('div')
 
 input.placeholder = 'Enter Username'
-tittle.textContent = "Search Github Profile"
+tittle.textContent = "Search Github Profiles"
 button.textContent = "Search"
 input.style.marginBottom = '10px'
 
