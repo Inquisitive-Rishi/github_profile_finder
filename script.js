@@ -56,6 +56,7 @@ button.addEventListener('click', (e) => {
         section.appendChild(website)
         section.appendChild(followers)
         body.appendChild(section)
+        input.value = ''
     }
 }
 xhr.send()
