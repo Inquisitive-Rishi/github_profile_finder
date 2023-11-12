@@ -22,21 +22,16 @@ button.addEventListener('click', (e) => {
     
     const requestURL = `https://api.github.com/users/${input.value}`;
 
+    fetch(requestURL)
+    .then((response) => response.json())
+    .then(data => {
+
     const name = document.createElement('h3')
     const location = document.createElement('h3')
     const website = document.createElement('a')
     const twitter_username = document.createElement('h3')
     const followers = document.createElement('h3')   
-
- 
-    
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', requestURL)
-    xhr.onreadystatechange = function() {
-    console.log(this.readyState);
-    if (this.readyState === 4) {
-        const data = JSON.parse(this.responseText);
-        const img = document.createElement('img');   
+    const img = document.createElement('img');   
 
         img.style.display = 'block'
         img.style.height = '300px'
@@ -57,7 +52,7 @@ button.addEventListener('click', (e) => {
         section.appendChild(followers)
         body.appendChild(section)
         input.value = ''
+    })
+    .catch('Error: Something went wrong')
     }
-}
-xhr.send()
-})
+)
